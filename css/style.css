@@ -1,0 +1,42 @@
+body{
+  background:#0f172a;
+  color:white;
+  font-family:Inter;
+  text-align:center;
+  margin:0;
+  padding:30px;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav a{
+  color:#38bdf8;
+  margin-left:15px;
+  text-decoration:none;
+}
+
+.hero span{color:#38bdf8}
+
+button{
+  padding:10px 20px;
+  margin:10px;
+  background:#38bdf8;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+input, textarea{
+  width:100%;
+  max-width:400px;
+  padding:10px;
+  margin:8px auto;
+  display:block;
+  background:#020617;
+  border:none;
+  color:white;
+}
