@@ -2,39 +2,124 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Hisgenberg | Premium Digital Agency</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hisgenberg | Luxury Web Agency</title>
 
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
-<nav>
-  <h2>HISGENBERG</h2>
-  <div>
-    <a href="login.html">Client Login</a>
-    <a href="admin.html">Admin</a>
-  </div>
-</nav>
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>
 
-<section class="hero">
-  <h1>Engineering <span>Digital Peaks</span></h1>
-  <p>Premium websites, SaaS systems & scalable solutions.</p>
+<!-- PREMIUM LOADER -->
+<div id="loader">
+    <div class="loader-content">
+        <div class="loader-logo">H</div>
+        <div class="loader-line"></div>
+        <p>HISGENBERG</p>
+    </div>
+</div>
+
+<!-- PARTICLE BACKGROUND -->
+<canvas id="particles"></canvas>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">
+        <img src="assets/logo.png">
+        <span>Hisgenberg</span>
+    </div>
+
+    <nav>
+        <ul id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button onclick="openLogin()" class="login-btn">Client Login</button></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <h1 class="fade">Luxury Websites Built for Growth</h1>
+    <p class="fade">We design high-converting premium digital platforms for serious brands.</p>
+    <button onclick="scrollToSection('pricing')" class="fade">View Packages</button>
 </section>
 
-<section class="pricing">
-  <h2>Plans</h2>
-  <button onclick="payNow('Basic',250)">Basic ₹250</button>
-  <button onclick="payNow('Standard',320)">Standard ₹320</button>
-  <button onclick="payNow('Premium',400)">Premium ₹400</button>
+<!-- SERVICES -->
+<section id="services" class="section">
+    <h2 class="fade">Our Services</h2>
+    <div class="cards">
+        <div class="card fade">
+            <h3>Business Websites</h3>
+            <p>Professional responsive websites focused on growth & credibility.</p>
+        </div>
+        <div class="card fade">
+            <h3>E-commerce Stores</h3>
+            <p>High-performance stores optimized for conversions.</p>
+        </div>
+        <div class="card fade">
+            <h3>UI/UX Design</h3>
+            <p>Luxury user experiences crafted with strategy.</p>
+        </div>
+    </div>
 </section>
 
-<section class="contact">
-  <h2>Contact</h2>
+<!-- PRICING -->
+<section id="pricing" class="section dark">
+    <h2 class="fade">Investment Plans</h2>
+    <div class="cards">
+        <div class="card fade">
+            <h3>Basic</h3>
+            <p>$250</p>
+            <button onclick="selectPlan('Basic')">Choose Plan</button>
+        </div>
+        <div class="card premium fade">
+            <h3>Premium</h3>
+            <p>$400</p>
+            <button onclick="selectPlan('Premium')">Choose Plan</button>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2 class="fade">Contact</h2>
+    <p>📞 7895702506</p>
+    <p>📧 hisgenberg@gmail.com</p>
+
+    <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Project Details"></textarea>
+        <button type="submit">Send Inquiry</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Hisgenberg. Premium Digital Agency.
+</footer>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span onclick="closeLogin()" class="close">×</span>
+        <h2>Client Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>  <h2>Contact</h2>
   <input id="name" placeholder="Name">
   <input id="email" placeholder="Email">
   <textarea id="message" placeholder="Message"></textarea>
